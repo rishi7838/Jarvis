@@ -40,4 +40,13 @@ $(document).ready(function () {
         },
         
     });
+
+    //mic button click event
+    $( "#Micbtn").click(function () { 
+        eel.playAssistantSound()
+
+        $("#oval").attr("hidden", true);         // hide oval
+        $("#SiriWave").removeAttr("hidden");     // show SiriWave
+        
+    });
 });
