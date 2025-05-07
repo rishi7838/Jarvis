@@ -152,8 +152,10 @@ def whatsApp(mobile_no, message, flag, name):
         message = ''
         jarvis_message = f"Starting video call with {name}"
 
+#encode the msg for url
     encoded_message = quote(message)
     print(f"Encoded message: {encoded_message}")
+    #constrtuct url
     whatsapp_url = f"whatsapp://send?phone={mobile_no}&text={encoded_message}"
     full_command = f'start "" "{whatsapp_url}"'
 

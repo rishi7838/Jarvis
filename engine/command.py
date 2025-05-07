@@ -43,10 +43,16 @@ def takecommand():
 
 # speak(text)
 @eel.expose
-def allCommands():
-    try:
+def allCommands(message=1):
+    if message ==1:
         query = takecommand()
         print("Full command:", query)
+    else:
+        query=message
+
+
+    try:
+        
 
         if "open" in query:
             from engine.feature import openCommand
