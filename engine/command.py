@@ -3,6 +3,7 @@ import speech_recognition as sr
 import eel
 import time
 def speak(text):
+    text=str(text)
     engin=pyttsx3.init()
     voices = engin.getProperty('voices')  
     engin.setProperty('voice', voices[0].id) 
@@ -10,6 +11,8 @@ def speak(text):
     eel.DisplayMessage(text)
     # print(voices)  not use full
     engin.say(text)
+    #when jarvis say and receive text
+    eel.receiverText(text)
     engin.runAndWait()
 
  
@@ -47,8 +50,10 @@ def allCommands(message=1):
     if message ==1:
         query = takecommand()
         print("Full command:", query)
+        eel.senderText(query)
     else:
         query=message
+        eel.senderText(query)
 
 
     try:
@@ -82,8 +87,10 @@ def allCommands(message=1):
                 speak("Contact not found.")
 
         else:
-            print("Command not recognized.")
-            speak("Sorry, I didn't understand.")
+            # print("Command not recognized.")
+            # speak("Sorry, I didn't understand.")
+            from engine.feature import chatBot
+            chatBot(query)
     except Exception as e:
         print("Error occurred:", str(e))
         speak("Something went wrong.")
