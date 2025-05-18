@@ -3,6 +3,8 @@
 
 # To run Jarvis
 import multiprocessing
+import subprocess
+#import subprocess
 
 
 def startJarvis():
@@ -17,6 +19,7 @@ def listenHotword():
     # Code for process 2
         print("Process 2 is running.")
         from engine.feature import hotword
+
         hotword()
 
 
@@ -26,7 +29,10 @@ if __name__ == '__main__':
         p1 = multiprocessing.Process(target=startJarvis)
         p2 = multiprocessing.Process(target=listenHotword)
         p1.start()
-        p2.start()
+        subprocess.call([r'device.bat'])    
+        
+        p2.start()                                              
+        
         p1.join()
 
         if p2.is_alive():
