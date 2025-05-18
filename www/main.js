@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    eel.init()()//back end se a rha that why 2 bracket 
+
+    
     $('.text').textillate({
         loop: true,
         sync: true,

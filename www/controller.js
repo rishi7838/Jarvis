@@ -4,7 +4,7 @@ $(document).ready(function () {
     eel.expose(DisplayMessage)
     function DisplayMessage(message) {
 
-        $(".siri-message li:first").text(message);
+        $(".siri-message  ").text(message);// li first is error that make problem that doesnot show the my ask word on siri wave
         $('.siri-message').textillate('start');
 
     }
@@ -83,11 +83,11 @@ $(document).ready(function () {
         $("#Start").attr("hidden", true);
 
         setTimeout(function () {
-            $("#Oval").addClass("animate__animated animate__zoomIn");
+            $("#oval").addClass("animate__animated animate__zoomIn");
 
         }, 1000)
         setTimeout(function () {
-            $("#Oval").attr("hidden", false);
+            $("#oval").attr("hidden", false);
         }, 1000)
     }
 });
