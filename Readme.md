@@ -26,6 +26,11 @@ This project is developed through a day-wise tutorial series, where each day foc
 * Chat History Feature
 
 ---
+## 🔍 Demo Image
+
+![Jarvis Demo](www/assets/images/jarvispic.png)
+
+---
 
 ## ⚖️ Tech Stack
 
